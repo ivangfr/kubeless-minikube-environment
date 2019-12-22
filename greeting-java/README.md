@@ -1,7 +1,7 @@
 # `kubeless-minikube-environment`
 ## `> greeting-java`
 
-The goal of this example is to deploy in the Kubeless cluster the `greeting-java` function
+The goal of this example is to deploy in the `Kubeless` cluster the `greeting-java` function
 
 ## Start Minikube and install Kubeless
 
@@ -22,11 +22,18 @@ First of all, start `Minikube` and install `Kubeless` as explained at [Start Env
    kubeless function describe -n kubeless greeting-java
    ```
 
-1. Check function in `Kubeless`
+1. Check function status
    ```
    kubeless function ls -n kubeless
    ```
-   > **Note:** continue to the next step when the `STATUS` of the function is `1/1 READY`
+   - Continue to the next step when the `STATUS` of the function is `1/1 READY`
+
+   - **Troubleshooting**
+
+     In case the function doesn't get ready, run the following command to get more details
+     ```
+     kubectl describe pod -n kubeless <greeting-java-running-pod>
+     ```
 
 1. Call function
    ```
@@ -37,3 +44,15 @@ First of all, start `Minikube` and install `Kubeless` as explained at [Start Env
    ```
    kubeless function logs -n kubeless greeting-java
    ```
+
+1. Check the function configmaps (source code can be seeing here)
+   ```
+   kubectl describe configmaps -n kubeless greeting-java
+   ```
+
+1. Delete function
+   ```
+   kubeless function delete -n kubeless greeting-java
+   ```
+
+

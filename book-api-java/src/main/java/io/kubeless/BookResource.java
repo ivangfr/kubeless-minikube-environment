@@ -1,9 +1,5 @@
 package io.kubeless;
 
-// -- Uncomment those imports in the final function version
-//import io.kubeless.Event;
-//import io.kubeless.Context;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

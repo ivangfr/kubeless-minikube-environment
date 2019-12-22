@@ -1,8 +1,5 @@
-package com.mycompany.bookapi;
+package io.kubeless;
 
-import io.kubeless.BookResource;
-import io.kubeless.Context;
-import io.kubeless.Event;
 import org.junit.Rule;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -19,7 +16,7 @@ import java.util.Collections;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class AppTest {
+class BookResourceTest {
 
     private static BookResource bookResource;
     private static Connection conn;

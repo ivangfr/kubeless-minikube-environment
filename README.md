@@ -4,26 +4,30 @@ The goal of this project is to setup [`Kubeless`](https://kubeless.io/) in [`Min
 
 ## Prerequisites
 
-You must have `Kubectl`, `Minikube` and `Kubeless CLI` installed in your machine. Here are the links to websites that explain how install [`Kubectl`](https://kubernetes.io/docs/tasks/tools/install-kubectl/) and [`Minikube`](https://kubernetes.io/docs/tasks/tools/install-minikube/). `Kubeless CLI` can be downloaded from the [release page](https://github.com/kubeless/kubeless/releases).
+You must have installed in your machine:
+- a recent version of [`Apache Maven`](https://maven.apache.org/);
+- [`JDK 1.8`](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) or later;
+- `Kubectl` (how to install [here](https://kubernetes.io/docs/tasks/tools/install-kubectl/))
+- `Minikube` (how to install [here](https://kubernetes.io/docs/tasks/tools/install-minikube/))
+- `Kubeless CLI` (can be downloaded from the [release page](https://github.com/kubeless/kubeless/releases))
 
 ## Examples
 
+- ### [book-api-java](https://github.com/ivangfr/kubeless-minikube-environment/tree/master/book-api-java)
 - ### [greetting-java](https://github.com/ivangfr/kubeless-minikube-environment/tree/master/greeting-java)
 
 ## Start Environment
 
 ### Start Minikube
 
-Open a terminal and start `Minikube` by running the following command. The properties `--memory` and `--vm-driver` are optional.
+Open a terminal and start `Minikube` by running the following command. The properties `--memory`, `--cpus` and `--vm-driver` are optional.
 ```
-minikube start --memory='8000mb' --vm-driver='virtualbox'
-
-minikube start --memory=8192 --cpus=4
+minikube start --memory=8192 --cpus=4 --vm-driver='virtualbox'
 ```
 
 ### Install Kubeless
 
-Run the script below to install `Kubeless` in `Minikube`
+In `kubeless-minikube-environment` directory, run the script below to install `Kubeless` in `Minikube`
 ```
 ./install-kubeless.sh
 ```
@@ -37,7 +41,7 @@ kubectl get pods --namespace kubeless
 
 ### Uninstall Kubeless
 
-Run the script below to uninstall `Kubeless`
+In `kubeless-minikube-environment` directory, run the script below to uninstall `Kubeless`
 ```
 ./uninstall-kubeless.sh
 ```
