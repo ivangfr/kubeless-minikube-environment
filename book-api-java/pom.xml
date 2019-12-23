@@ -80,7 +80,6 @@
                 <version>1.0-SNAPSHOT</version>
                 <configuration>
                     <inputJavaClassName>BookResource</inputJavaClassName>
-                    <outputJavaClassName>BookResource</outputJavaClassName>
                 </configuration>
                 <executions>
                     <execution>
